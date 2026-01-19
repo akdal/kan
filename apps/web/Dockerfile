@@ -51,7 +51,7 @@ COPY --from=pruner /app/AUTO_VERSION /tmp/AUTO_VERSION
 
 ENV CI=true
 
-RUN --mount=type=cache,id=pnpm,target=~/.pnpm-store pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
  
 COPY --from=pruner /app/out/full/ .
 
